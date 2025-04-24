@@ -2,7 +2,10 @@ package io.pinkspider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.SplittableRandom;
 import java.util.TreeSet;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -96,4 +99,38 @@ public class Main {
         }
         return answer;
     }
+
+    // 06 실패율
+    public static int[] solution_06(int N, int[] stages) {
+
+        int[] challenger = new int[N+2];
+        Arrays.stream(stages).forEach(stage -> challenger[stage]++);
+
+        HashMap<Integer, Double> fails = new HashMap<>();
+        double totalPlayer = stages.length;
+
+        for( int i = 1; i <= N; i++) {
+            if(challenger[i] == 0) {
+                fails.put(i, 0.0);
+            }else {
+                fails.put(i, (double)challenger[i]/totalPlayer);
+                totalPlayer -= challenger[i];
+            }
+        }
+
+        return fails.entrySet().stream()
+            .sorted((o1, o2) -> Double.compare(o2.getValue(), o1.getValue()))
+            .mapToInt(HashMap.Entry::getKey).toArray();
+    }
+
+    public static int solution_07(String dirs) {
+        int answer = 0;
+
+        // 초기 (0,0)
+        // 제한 (5,5) (5,-5) (-5,-5), (5, -5)
+
+        return answer;
+    }
+
+
 }
