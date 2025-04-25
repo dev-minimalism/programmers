@@ -1,10 +1,10 @@
-package io.pinkspider;
+package io.pinkspider.array;
 
 import java.util.HashMap;
 import java.util.HashSet;
 
 // 방문길이
-class Solution {
+class Solution07 {
 
     private static HashMap<Character, int[]> location = new HashMap<>();
 
