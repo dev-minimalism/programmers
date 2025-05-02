@@ -2,6 +2,7 @@ package io.pinkspider.stack;
 import java.util.ArrayDeque;
 import java.util.HashMap;
 
+// 괄호 회전하기
 public class Solution10 {
 
     public int solution(String s) {
