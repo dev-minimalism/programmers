@@ -2,7 +2,7 @@ package io.pinkspider.stack;
 
 import java.util.Stack;
 
-// 짝지어 제거하기
+// 주식 가격
 public class Solution12 {
 
     public int[] solution(int[] prices) {
