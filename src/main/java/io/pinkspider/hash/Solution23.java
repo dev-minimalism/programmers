@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 
 // 23. 신고 결과 받기
+// HashSet 사용할 생각을 했어야 함.
 public class Solution23 {
 
     public static int[] solution(String[] id_list, String[] report, int k) {
@@ -26,7 +27,7 @@ public class Solution23 {
         }
 
         for (Map.Entry<String, HashSet<String>> entry : reportedUser.entrySet()) {
-            if (entry.getValue().size() == k) {
+            if (entry.getValue().size() >= k) {
                 for (String userId : entry.getValue()) {
                     count.put(userId, count.getOrDefault(userId, 0) + 1);
                 }
